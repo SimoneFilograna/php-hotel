@@ -66,6 +66,7 @@
                 <option value="0">No</option>
             </select>
 
+
             <button type="submit" name="submit" class="btn btn-primary mt-3">Cerca</button>
         </form>
         
@@ -84,7 +85,7 @@
                 <tbody>
                     <?php   
                     foreach($hotels as $hotel){   
-                        if($_GET["parking"] == $hotel["parking"] || $_GET["parking"] == "complete" ){               
+                        if($_GET["parking"] == $hotel["parking"] || $_GET["parking"] == "complete"){               
                     ?>
                     <tr>
                         <td><?php echo $hotel["name"] ?> </td>
@@ -95,7 +96,7 @@
                     </tr>
 
 
-                    <?php } ?>
+                        <?php } ?>
                     <?php } ?>
 
                 </tbody>
