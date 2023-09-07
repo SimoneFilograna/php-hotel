@@ -52,35 +52,42 @@
 
 <body>
     <div class="container mt-3">
-        <h1 class="display-1 text-center">Hotel</h1>
+        <h1 class="display-1 text-center pb-5">Hotel</h1>
 
         <form action="index.php" method="GET">
+            <div class="row align-items-center">
+                <div class="first-input col-6 text-center">
+                    <label for="parking" class="mb-2 w-100"> 
+                        <h2>Parking</h2> 
+                    </label>
+        
+                    <select name="parking" class="form-select" id="parking">
+                        <option value="null" hidden></option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                           
+                <div class="second-input col-6 text-center">
+                    <label for="vote" class="mb-2 w-100"> 
+                        <h2>Vote</h2> 
+                    </label>
+        
+                    <select name="vote" id="vote" class="w-100 form-select">
+                        <option value="null" hidden></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
 
-            <label for="parking" class="mb-2"> 
-                <h2>Parking</h2> 
-            </label>
 
-            <select name="parking" class="form-select" id="parking">
-                <option value="null" hidden></option>
-                <option value="1">Yes</option>
-                <option value="0">No</option>
-            </select>
-
-            <label for="vote" class="mb-2"> 
-                <h2>Vote</h2> 
-            </label>
-
-            <select name="vote" id="vote">
-                <option value="null" hidden></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-
-
-            <button type="submit" name="submit" class="btn btn-primary mt-3">Cerca</button>
+            <div class="container-button text-center">
+                <button type="submit" name="submit" class="btn btn-danger mt-5">Cerca</button>
+            </div>
         </form>
         
         
