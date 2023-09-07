@@ -38,7 +38,7 @@
         ],
 
     ];
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -54,6 +54,22 @@
     <div class="container mt-3">
         <h1 class="display-1 text-center">Hotel</h1>
 
+        <form action="index.php" method="GET">
+
+            <label for="parking" class="mb-2"> 
+                <h2>Parking</h2> 
+            </label>
+
+            <select name="parking" class="form-select" id="parking">
+                <option hidden selected value="complete""></option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <button type="submit" name="submit" class="btn btn-primary mt-3">Cerca</button>
+        </form>
+        
+        
         <div class="cont-table mt-5">
             <table class="table">
                 <thead>
@@ -67,7 +83,8 @@
                 </thead>
                 <tbody>
                     <?php   
-                    foreach($hotels as $hotel){                       
+                    foreach($hotels as $hotel){   
+                        if($_GET["parking"] == $hotel["parking"] || $_GET["parking"] == "complete" ){               
                     ?>
                     <tr>
                         <td><?php echo $hotel["name"] ?> </td>
@@ -76,6 +93,9 @@
                         <td><?php echo $hotel["vote"] ?> </td>
                         <td><?php echo $hotel["distance_to_center"] . " Km" ?> </td>
                     </tr>
+
+
+                    <?php } ?>
                     <?php } ?>
 
                 </tbody>
