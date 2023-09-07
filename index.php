@@ -61,9 +61,22 @@
             </label>
 
             <select name="parking" class="form-select" id="parking">
-                <option hidden selected value="complete""></option>
+                <option value="null" selected></option>
                 <option value="1">Yes</option>
                 <option value="0">No</option>
+            </select>
+
+            <label for="vote" class="mb-2"> 
+                <h2>Vote</h2> 
+            </label>
+
+            <select name="vote" id="vote">
+                <option value="null" hidden selected></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select>
 
 
@@ -85,7 +98,8 @@
                 <tbody>
                     <?php   
                     foreach($hotels as $hotel){   
-                        if($_GET["parking"] == $hotel["parking"] || $_GET["parking"] == "complete"){               
+                        if( !$_GET ||$_GET["parking"] == $hotel["parking"]){ 
+                
                     ?>
                     <tr>
                         <td><?php echo $hotel["name"] ?> </td>
