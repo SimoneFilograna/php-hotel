@@ -86,7 +86,7 @@
 
 
             <div class="container-button text-center">
-                <button type="submit" name="submit" class="btn btn-danger mt-5">Cerca</button>
+                <button type="submit" name="submit" class="btn btn-danger mt-5">Filtra</button>
             </div>
         </form>
         
