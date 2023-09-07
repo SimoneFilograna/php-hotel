@@ -54,7 +54,7 @@
     <div class="container mt-3">
         <h1 class="display-1 text-center">Hotel</h1>
 
-        <div class="cont-table">
+        <div class="cont-table mt-5">
             <table class="table">
                 <thead>
                     <tr>
