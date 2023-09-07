@@ -61,7 +61,7 @@
             </label>
 
             <select name="parking" class="form-select" id="parking">
-                <option value="null" selected></option>
+                <option value="null" hidden></option>
                 <option value="1">Yes</option>
                 <option value="0">No</option>
             </select>
@@ -71,7 +71,7 @@
             </label>
 
             <select name="vote" id="vote">
-                <option value="null" hidden selected></option>
+                <option value="null" hidden></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -98,7 +98,11 @@
                 <tbody>
                     <?php   
                     foreach($hotels as $hotel){   
-                        if( !$_GET ||$_GET["parking"] == $hotel["parking"]){ 
+                        if( !$_GET 
+                        ||$_GET["parking"] == $hotel["parking"] &&  $_GET["vote"] == "null"
+                        || $_GET["parking"] == "null" && $hotel["vote"] >= $_GET["vote"]
+                        || $_GET["parking"] == "null" && $_GET["vote"] == "null"
+                        || $_GET["parking"] == $hotel["parking"] && $hotel["vote"] >= $_GET["vote"] )  { 
                 
                     ?>
                     <tr>
